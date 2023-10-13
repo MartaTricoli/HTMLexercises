@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="author" content="Marta Tricoli">
+    <meta property="og:url" content="https://github.com/MartaTricoli/HTMLexercises/blob/main/FormExercise.html">
+    <meta property="description" content="practise with form creation">
+    <title>Form Exercise</title>
+    <link rel="icon" type="image/x-icon" href="Library-no-text.svg">
+</head>
+<body>
+    <header>
+        <center>
+            <h1><img src="Library-no-text.svg" alt="Two shelves with books" width="5%"> Read, Love & Share <img src="Library-no-text.svg" alt="Two shelves with books" width="5%"></h1>
+        </center>
+        <hr>
+    </header>
+    <nav>
+        <ul>
+            <li>HOME</li>
+            <li>CHI SIAMO</li>
+            <li>SERVIZI</li>
+            <li>CONTATTI</li>
+            <li>CATALOGO</li>
+            <li>ASSISTENZA CLIENTI</li>
+            <li>FAQ</li>    
+        </ul>
+        <hr>
+    </nav>
+    <main>
+        <h2>Registrazione utente</h2>
+        <h3>Crea il tuo profilo e scegli il tuo piano:</h3>
+        <br>
+        <form>
+            <section>
+                <h4>Dati personali:</h4>
+                <label for="name">Nome&#42;</label>
+                <input type="text" class="name" placeholder="es. Mario" required minlength="2" pattern="[A-Za-z]+">
+                <label for="surname">Cognome&#42;</label>
+                <input type="text" class="surname" placeholder="es. Rossi" required minlength="2" pattern="[A-Za-z]+">
+                <label for="date">Data di nascita&#42;</label>
+                <input type="date" class="date" required>
+                <label for="phone">Telefono</label>
+                <input type="tel" class="phone" pattern=".*\d" minlength="8">
+                <hr>
+            </section>
+            <section>
+                <h4>Inserisci un'email valida e crea una password per il login:</h4>
+                <label for="email">Email&#42;</label>
+                <input type="email" class="email" required>
+                <label for="password">Password&#42;</label>
+                <input type="password" class="password" required pattern=".{8,12}">
+                <p><small>La password deve essere compresa tra gli 8 e i 12 caratteri</small></p>
+                <hr>          
+            </section>
+            <section>
+                <h4>Scegli tuo piano:</h4>
+                <select name="plan" id="plan" required>
+                    <option value="free_plan">Prova gratuita di 3 mesi</option>
+                    <option value="monthly_plan">Piano BRONZO: 1 mese a 9€</option>
+                    <option value="six-month_plan">Piano ARGENTO: 6 mesi a 50€</option>
+                    <option value="annual_plan">Piano ORO: annuale a 99€</option>
+                </select>
+                <input type="checkbox" class="piano_gold">
+                <label for="piano_gold">Piano annuale ORO-PRO: audiolibri inclusi a 110€</label>
+                <div><small>Per informazioni sui vari piani clicca <a href="http://www.google.it">qui</a></small></div>
+            </section>
+            <br>
+            <hr>
+            <section>
+                <h4>Paga con carta di credito:</h4>
+                <label for="card_number">Numero carta&#42;</label>
+                <input type="text" class="card_unmber" required minlength="16" pattern=".*\d"> 
+                <label for="expiration_date">Data di scadenza&#42;</label>
+                <input type="month" class="expiration_date" required>
+                <label for="cvc">CVV o CVC&#42;</label>
+                <input type="text" class="cvc" required pattern=".*\d" minlength="3" maxlength="3">
+            </section>
+            <br>
+            <hr>
+            <section>
+                <fieldset>
+                    <legend><h4>Indirizzo di fatturazione:</h4></legend>
+                    <div>
+                        <label for="type_utent">Tipo di utente&#42;</label>
+                        <select class="type_utent" id="type_utent" required>
+                            <option value="private">Privato</option>
+                            <option value="company">Azienda</option>
+                        </select>
+                        <label for="firstname">Nome&#42;</label>
+                        <input type="text" name="firstname" required required minlength="2" pattern="[A-Za-z]+">
+                        <label for="lasname">Cognome&#42;</label>
+                        <input type="text" name="lasname" required required minlength="2" pattern="[A-Za-z]+">
+                        <hr>    
+                    </div>
+                    <div>
+                        <label for="Tax_ID_code">Codice Fiscale&#42;</label>
+                        <input type="text" name="Tax_ID_code" required pattern=".*\d" minlength="16" maxlength="16">
+                        <hr>
+                    </div>
+                    <div>
+                        <label for="state">Stato&#42;</label>
+                        <select class="state" id="state" required>
+                            <option value="Italy">Italia</option>
+                            <option value="Germany">Germania</option>
+                            <option value="France">Francia</option>
+                        </select>
+                        <label for="address">Indirizzo&#42;</label>
+                        <input type="text" name="address" required pattern="[A-Za-z]+">
+                        <label for="house_number">civico&#42;</label>
+                        <input type="text" name="house_number" required>
+                        <label for="cap">CAP&#42;</label>
+                        <input type="text" name="cap" required pattern=".*\d">
+                        <label for="city">città&#42;</label>
+                        <input type="text" class="city" required pattern="[A-Za-z]+">
+                        <label for="province">provincia&#42;</label>
+                        <select name="province" id="province" required>
+                            <option value="MI">Milano</option>
+                            <option value="RM">Roma</option>
+                            <option value="VE">Venezia</option>
+                        </select>
+                        <hr>
+                    </div>
+                    <div>
+                        <label for="house_phone">Telefono&#42;</label>
+                        <input type="text" name="house_phone" required pattern=".*\d" minlength="8">
+                        <label for="self_phone">Cellulare&#42;</label>
+                        <input type="text" name="self_phone" required pattern=".*\d" minlength="8">
+                        <label for="fax">Fax</label>
+                        <input type="text" class="fax" pattern=".*\d" minlength="8">
+                    </div>
+                </fieldset>
+                <hr>
+            </section>
+            <button>Procedi</button>
+        </form> 
+        <hr>           
+    </main>
+    <aside></aside>
+    <footer></footer>
+</body>
+</html>
